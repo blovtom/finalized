@@ -18,14 +18,14 @@
 <?php endforeach;?>
 </table>
     
-<h2>Result</h2>
-<h3>
+<h3>Result</h3>
+<h4>
     Recommendation: There are no known compatibility issues<br>
     The minimum version of Wordpress required with the Plugins selected is<?php foreach($plugintools as $plugintool): ?>
 <?php  $hold = $plugintool['Plugintool']['requiresAtLeast'];?>
     <?php endforeach ;?>    
     <?php echo (max(array($hold))); ?>
-</h3>
+</h4>
 <div class="row">
 	<div class="col-lg-12">
 		<table class="table">

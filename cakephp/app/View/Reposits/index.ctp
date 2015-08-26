@@ -57,29 +57,42 @@
 			<tbody>
 				<tr>
 					<td>
-                       <!--            <?php foreach ($duplicates as $dup):?>
+                           <!--     <?php foreach ($duplicates as $dup):?>
                                     <?php echo $dup; ?>  
-                                    <?php endforeach;?> -->                                
-                                        <?php $duplicates= array('kbAmazonDropShipManagerPluginRequired' => true);?>    
+                                    <?php endforeach;?> -->   
+                                    
+                                    
+                            
                           <?php $functions=array('kbAmazonDropShipManagerPluginRequired' => true);?>  
                        <?php  foreach ($plugintools as $plugintool): ?> 
 			<?php foreach ($plugintool['Functionality'] as $func): ?>                            
-                        <?php 	$fName=($func['function_name']);?>                       
+                        <?php 	$fName=($func['function_name']);?>  
+                          
+                           
+                           
+                           
+                           
+                           
+                           
                          <?php  if(isset($functions[$fName]))
                              {
                              $duplicates[]=$fName;
-                                     
+                            echo $duplicates.'duplicate';
+                            
                          }
                              else
                              {
                                  $functions[]=$fName;
-                                     
-                             }; ?> 
+                                     // echo $functions.'function';
+                             }; 
+                             
+                             ?> 
+                           
                             <?php endforeach ?>
                             <?php endforeach ?>
  
-                                    <?php echo $duplicates; ?>
-                             <?php echo $functions; ?>
+                         
+                         
 					</td> 
                                                 <td>                               
                                    <?php foreach ($hduplicates as $hdup):?>
@@ -114,6 +127,8 @@
 	</div>
 </div>
 
+
+<!--
 	<p>
 	<?php
 	echo $this->Paginator->counter(array(
@@ -127,3 +142,5 @@
 		echo $this->Paginator->next(__(' next') . ' >', array(), null, array('class' => ' next disabled'));
 	?>
 	</div>
+        
+        -->
