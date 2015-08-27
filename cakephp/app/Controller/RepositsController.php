@@ -13,30 +13,29 @@ class RepositsController extends AppController {
    
     $plugintools =array();
     
-//        $functions = array();
-//		$duplicates = array();
-//                
-//		foreach ($plugintools as $plugintool) 
-//                   {
-//			foreach ($plugintool['Functionality'] as $func) 
-//                       {                           
-//                        
-//			$fname = $func['function_name'];
-//                       }
-//                   }
-//			if (isset($functions[$fname])) 
-//                           {
-//                            $duplicates[] = $fname;
-//                            
-//                            }                       
-//                             else                        
-//                            {
-//                            $functions[] = $fname;
-//                                        
-//                            }							
-//                        }
-//                   }
+        $functions = array('kbAmazonDropShipManagerPluginRequired' => true);
+	$duplicates = array();
+		foreach ($plugintools as $plugintool) 
+                   {
+			foreach ($plugintool['Functionality'] as $func) 
+                       {                           
+                        
+			$fName = $func['function_name'];
+                       }
                    
+			if (isset($functions[$fName])) 
+                           {
+                            $duplicates[] = $fName;
+                            
+                            }                       
+                             else                        
+                            {
+                            $functions[] = $fName;
+                                       
+                            }							
+                        }
+                   
+    
                 $hooks =     array(); 
                 $hduplicates = array();
                 	foreach ($plugintools as $plugintool) 
@@ -97,13 +96,13 @@ class RepositsController extends AppController {
                 $this->set('mduplicates',$mduplicates);
                 $this->set('fduplicates',$fduplicates); 
 		$this->set('hduplicates',$hduplicates); 
-//		$this->set('plugintools', $plugintools);
-//		$this->set('duplicates', $duplicates);		
-//                 $this->set('fname',$fname);
+		$this->set('plugintools', $plugintools);
+                $this->set('duplicates', $duplicates);		
+                
       
      
                    
                 
-     }
-                        }
+}
+}             
 ?>

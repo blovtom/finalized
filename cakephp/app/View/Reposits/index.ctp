@@ -57,42 +57,15 @@
 			<tbody>
 				<tr>
 					<td>
-                           <!--     <?php foreach ($duplicates as $dup):?>
-                                    <?php echo $dup; ?>  
-                                    <?php endforeach;?> -->   
+
                                     
-                                    
-                            
-                          <?php $functions=array('kbAmazonDropShipManagerPluginRequired' => true);?>  
-                       <?php  foreach ($plugintools as $plugintool): ?> 
-			<?php foreach ($plugintool['Functionality'] as $func): ?>                            
-                        <?php 	$fName=($func['function_name']);?>  
-                          
-                           
-                           
-                           
-                           
-                           
-                           
-                         <?php  if(isset($functions[$fName]))
-                             {
-                             $duplicates[]=$fName;
-                            echo $duplicates.'duplicate';
-                            
-                         }
-                             else
-                             {
-                                 $functions[]=$fName;
-                                     // echo $functions.'function';
-                             }; 
-                             
-                             ?> 
-                           
-                            <?php endforeach ?>
-                            <?php endforeach ?>
- 
-                         
-                         
+                                       <?php foreach ($duplicates as $dup):?>
+                                    <?php echo $dup; ?>
+                                    <?php echo $duplicates; ?>        
+                                    <?php endforeach;?>                                
+                                <?php  if (null == $duplicates){
+                                          echo "These Plugins do not call the same function names";
+                                      }  ?>        
 					</td> 
                                                 <td>                               
                                    <?php foreach ($hduplicates as $hdup):?>
