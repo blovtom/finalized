@@ -1,6 +1,33 @@
+       
+<div class ="filters" align = "right">
+            <h3 >Filters</h3>
+            <?php
+            $base_url = array('controller' => 'plugintools', 'action' => 'index');
+            echo $this->Form->create("Filter",array('url' => $base_url, 'class' => 'filter'));
+            
+            echo $this ->Form ->input("name", array('label' => 'Name', 'options' => $names, 'empty' =>'All Plugins','default'=>''));
+            
+            
+            
+            //add a basic search
+          //  echo $this->Form->input("search", array('label' => 'Search', 'placeholder' => "Search..."));
+            
+            
+            
+            echo $this->Form->submit("View");
+            
+            echo "<div class='submit actions'>";
+            echo $this->Html->link("Reset", $base_url);
+            echo "</div>";
+            echo $this->Form->end();
+            ?>
+        </div>
+
+
+
 <div class="plugintools index">
 	
-	<div class="paging" align = "right">
+	<div class="paging" align = "left">
 	<?php
 		echo $this->Paginator->prev('< ' . __('Previous '), array(), null, array('class' => ' prev disabled'));
 		echo $this->Paginator->numbers(array('separator' => ' '));
@@ -55,6 +82,8 @@
 		echo $this->Paginator->next(__(' next') . ' >', array(), null, array('class' => ' next disabled'));
 	?>
 	</div>
+        
+
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

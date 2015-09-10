@@ -14,7 +14,8 @@ class PlugintoolsController extends AppController {
     public function index()
             {
       // $this->set('plugintools', $this->Paginator->paginate());       
-           $conditions = array();
+    
+       $conditions = array();
        //Transform POST into GET
        if(($this-> request->is ('post')|| $this->request ->is('put'))&& isset($this->data['Filter'])){
            $filter_url['controller'] = $this->request->params['controller'];
@@ -23,10 +24,10 @@ class PlugintoolsController extends AppController {
           //$filter_url['view'] = 1;
            
            //for each filter we will add a Get parameter for the generated url
-           foreach($this->data['Filter'] as $name => $value){ //for the data where variable name is the key of the plugin, value is the number
-               if($value){ //if variable value is not empty
+           foreach($this->data['Filter'] as $name => $value){
+               if($value){
                    
-                   $filter_url[$name]= urlencode($value);//this parses value to the url in $name
+                   $filter_url[$name]= urlencode($value);
                            
                }
            }
@@ -55,8 +56,6 @@ class PlugintoolsController extends AppController {
                
            }
        }
-       
-
        
        
        
